@@ -25,7 +25,7 @@ const buffPrices = {
     house: 500
 };
 const buffEffectiveness = {
-    sharpeningStone: 9999,
+    sharpeningStone: 1,
     blacksmith: 3,
     anvil: 5,
     house: 10
@@ -202,6 +202,9 @@ buttonGoBossesGame.addEventListener('click', () => {
             }
         } else {
             sharpnessCount = 0;
+            if (sharpnessCount < prevSharpnessUpgradeValue - 1) {
+                updateSwordImage('decrease');
+            }
             updateSharpnessHp();
             alert('You\'ve lost :(');
             clearInterval(bossPunch);
