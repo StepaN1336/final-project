@@ -9,6 +9,7 @@ const bossesSwords = document.querySelectorAll('.bosses_weapon');
 const sharpeningSound = document.querySelectorAll('.main_sharpening-sound');
 const swordLvlUpSound = document.querySelector('.main_sword-lvl-up-sound');
 const swordLvlDownSound = document.querySelector('.main_sword-lvl-down-sound');
+const buffImages = document.querySelectorAll('.buff');
 const upgradeIncreaseValue = 10;
 const effectivnessIncreaseValue = 1.2;
 let sharpnessCount = 0;
@@ -67,17 +68,22 @@ buffButtonsContainer.addEventListener('click', (event) => {
     if (event.target.classList.contains("main_button")) {
         const clickedButton = event.target;
         if (clickedButton.classList.contains("buttons_sharpening-stone")) {
-            sharpnessEffectiveClickUpdate('sharpeningStone');
-            updatePriceForClickBuff('sharpeningStone', 0);
+            const index = 0;
+            sharpnessEffectiveClickUpdate('sharpeningStone', index);
+            updatePriceForClickBuff('sharpeningStone', index);
         } else if (clickedButton.classList.contains("buttons_blacksmith")) {
-            perSecondEffectivnessUpdate('blacksmith');
-            updatePriceForPerSecondBuff('blacksmith', 1);
+            const index = 1;
+            perSecondEffectivnessUpdate('blacksmith', index);
+            updatePriceForPerSecondBuff('blacksmith', index);
+            
         } else if (clickedButton.classList.contains("buttons_anvil")) {
-            sharpnessEffectiveClickUpdate('anvil');
-            updatePriceForClickBuff('anvil', 2);
+            const index = 2;
+            sharpnessEffectiveClickUpdate('anvil', index);
+            updatePriceForClickBuff('anvil', index);
         } else if (clickedButton.classList.contains("buttons_house")) {
-            perSecondEffectivnessUpdate('house');
-            updatePriceForPerSecondBuff('house', 3);
+            const index = 3;
+            perSecondEffectivnessUpdate('house', index);
+            updatePriceForPerSecondBuff('house', index);
         }
     }
 });
@@ -94,10 +100,18 @@ function updatePriceForPerSecondBuff(buff, indexOfButton) {
     allTheButtons[indexOfButton].innerHTML = `+${buffEffectiveness[buff]} in a second for ${buffPrices[buff]} sharpness`;
 }
 
-function sharpnessEffectiveClickUpdate(buff) {
+function buffImageAnimation(index) {
+    buffImages[index].style.transform = 'scale(0.9)';
+    setTimeout(() => {
+        buffImages[index].style.transform = 'scale(1)';
+    }, 200);
+}
+
+function sharpnessEffectiveClickUpdate(buff, indexOfButton) {
     for (const key in buffPrices) {
         if (key === buff) {
             if (sharpnessCount - buffPrices[key] >= 0) {
+                buffImageAnimation(indexOfButton);
                 sharpnessCount -= buffPrices[key];
                 sharpnessEffectiveClick += buffEffectiveness[key];
                 buffPrices[key] *= effectivnessIncreaseValue;
@@ -111,10 +125,11 @@ function sharpnessEffectiveClickUpdate(buff) {
     }
 }
 
-function perSecondEffectivnessUpdate(buff) {
+function perSecondEffectivnessUpdate(buff, indexOfButton) {
     for (const key in buffPrices) {
         if (key === buff) {
             if (sharpnessCount - buffPrices[key] >= 0) {
+                buffImageAnimation(indexOfButton);
                 sharpnessCount -= buffPrices[key];
                 perSecondEffectivness += buffEffectiveness[key];
                 buffPrices[key] *= effectivnessIncreaseValue;
