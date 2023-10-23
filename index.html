@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+  <div class="main_clicker">
+    <h1 class="main_header">Sword Clicker</h1>
+    <div class="main_swords">
+      <img src="images/dagger.png" class="swords_weapon show" alt="dagger image">
+      <img src="images/sword.png" class="swords_weapon" alt="sword image">
+      <img src="images/fancy-sword.png" class="swords_weapon" alt="big sword image">
+    </div>
+    <div>
+      <span class="main_sharpness-field"></span>
+    </div>
+    <div class="main_buttons">
+      <div class="buttons_buff-container">
+        <img src="images/sharpening-stone.png" class="buffs_sharpening-stone buff" alt="sharpening stone image">
+        <button class="buttons_sharpening-stone main_button" buff-type="per-click"></button>
+      </div>
+      <div class="buttons_buff-container">
+        <img src="images/blacksmith.png" class="buffs_blacksmith buff" alt="balcksmith image">
+        <button class="buttons_blacksmith main_button" buff-type="per-second"></button>
+      </div>
+      <div class="buttons_buff-container">
+        <img src="images/anvil.png" class="buffs_anvil buff" alt="anvil image">
+        <button class="buttons_anvil main_button" buff-type="per-click"></button>
+      </div>
+      <div class="buttons_buff-container">
+        <img src="images/house.png" class="buffs_house buff" alt="blacksmiths house image">
+        <button class="buttons_house main_button" buff-type="per-second"></button>
+      </div>
+    </div>
+    <div class="main_other-pages">
+      <button class="main_goto-bosses-page">Fight some bosses</button>
+    </div>
+    <audio class="main_sharpening-sound" src="audio/sharpening-first.mp3"></audio>
+    <audio class="main_sharpening-sound" src="audio/sharpening-second.mp3"></audio>
+    <audio class="main_sword-lvl-up-sound" src="audio/sword-level-up.mp3"></audio>
+    <audio class="main_sword-lvl-down-sound" src="audio/sword-level-down.mp3"></audio>
+  </div>
+  <div class="main_bosses hidden-div">
+    <div class="bosses-container">
+      <div class="sword-container">
+        <img src="images/dagger.png" class="bosses_weapon show-sword" dmg="1" alt="dagger image">
+        <img src="images/sword.png" class="bosses_weapon" dmg="3" alt="sword image">
+        <img src="images/fancy-sword.png" class="bosses_weapon" dmg="100" alt="big sword image">
+      </div>
+      <img src="images/wolf-boss.png" class="bosses_boss show-boss" hp="100" dmg="10" alt="wolf-boss image">
+      <img src="images/guardian-boss.png" class="bosses_boss" hp="500" dmg="40" alt="guardian-boss image">
+      <img src="images/dark-mage-boss.png" class="bosses_boss" hp="2000" dmg="100" alt="dark-mage-boss image">
+    </div>
+    <div class="bosses_hp-container">
+      <span class="bosses_sword-hp"></span>
+      <span class="bosses_boss-hp"></span>
+    </div>
+    <button class="bosses_button-back">Go Back</button>
+    <audio class="bosses_boss-hit-sound" src="audio/hit-sound-first.mp3"></audio>
+    <audio class="bosses_boss-hit-sound" src="audio/hit-sound-second.mp3"></audio>
+    <audio class="bosses_boss-hit-sound" src="audio/hit-sound-third.mp3"></audio>
+    <audio class="bosses_boss-beated-sound" src="audio/boss-beated.mp3"></audio>
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>

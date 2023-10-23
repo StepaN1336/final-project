@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+body,
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.swords_weapon {
+    height: 200px;
+    width: 200px;
+    display: none;
+    transition: transform 0.1s;
+    cursor: pointer;
+}
+
+.show {
+    display: flex;
+}
+
+.show:hover {
+    transform: scale(1.1);
+}
+
+.buff {
+    padding: 20px 15px 0 0;
+    height: 170px;
+    width: 170px;
+    margin-right: 25px;
+    text-align: center;
+
+}
+
+.main_header {
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+.main_swords {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.swords_weapon {
+    margin: 0 10px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.swords_weapon:hover {
+    transform: scale(1.1);
+}
+
+.main_sharpness-field {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.main_buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.main_button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.main_goto-bosses-page:hover,
+.main_button:hover {
+    background-color: #2980b9;
+}
+
+.buttons_buff-container {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.main_goto-bosses-page {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    text-decoration: none;
+    width: 200px;
+    display: inline-block;
+    text-align: center;
+}
+
+
+.bosses_weapon, .bosses_boss {
+    display: none;
+}
+
+.bosses_weapon {
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.show-sword, .show-boss {
+    display: flex;
+}
+
+
+.bosses_hp-container, .bosses-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.boss-damaged {
+    filter: hue-rotate(90deg);
+}
+
+.hidden-div {
+    display: none;
+}
