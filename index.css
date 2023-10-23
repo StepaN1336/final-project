@@ -70,6 +70,7 @@ h1 {
     margin-top: 20px;
 }
 
+.bosses_button-back,
 .main_button {
     background-color: #3498db;
     color: #fff;
@@ -81,6 +82,7 @@ h1 {
     text-decoration: none;
 }
 
+.bosses_button-back:hover,
 .main_goto-bosses-page:hover,
 .main_button:hover {
     background-color: #2980b9;
