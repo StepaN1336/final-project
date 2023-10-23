@@ -9,13 +9,13 @@ const bossesSwords = document.querySelectorAll('.bosses_weapon');
 const sharpeningSound = document.querySelectorAll('.main_sharpening-sound');
 const swordLvlUpSound = document.querySelector('.main_sword-lvl-up-sound');
 const swordLvlDownSound = document.querySelector('.main_sword-lvl-down-sound');
-const upgradeIncreaseValue = 100;
+const upgradeIncreaseValue = 10;
 const effectivnessIncreaseValue = 1.2;
 let sharpnessCount = 0;
 let sharpnessEffectiveClick = 1;
 let perSecondEffectivness = 0;
-let sharpnessUpgradeValue = 10;
-let prevSharpnessUpgradeValue = 1;
+let sharpnessUpgradeValue = 100;
+let prevSharpnessUpgradeValue = 10;
 let imageCount = 0;
 
 const buffPrices = {
