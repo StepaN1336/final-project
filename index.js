@@ -37,7 +37,7 @@ if (sharpnessCount === 0) sharpnessUpdate();
 
 allTheButtons.forEach((element, indexOfButton) => {
     if (element.textContent.trim() === '') {
-        const buffType = element.getAttribute('buff-type');
+        const buffType = element.getAttribute('data-buff-type');
         const buffName = buffNames[indexOfButton];
         if (buffType === 'per-click') {
             updatePriceForClickBuff(buffName, indexOfButton);
@@ -153,7 +153,7 @@ function updateSwordImage(upgradeDircetion) {
             bossesSwords[imageCount].classList.add('show-sword');
             swordToClick = document.querySelector('.show');
             fighitingSword = document.querySelector('.show-sword');
-            swordDamage = fighitingSword.getAttribute('dmg');
+            swordDamage = fighitingSword.getAttribute('data-dmg');
             prevSharpnessUpgradeValue *= upgradeIncreaseValue;
             sharpnessUpgradeValue *= upgradeIncreaseValue;
             swordLvlUpSound.play();
@@ -167,7 +167,7 @@ function updateSwordImage(upgradeDircetion) {
             bossesSwords[imageCount].classList.add('show-sword');
             swordToClick = document.querySelector('.show');
             fighitingSword = document.querySelector('.show-sword');
-            swordDamage = fighitingSword.getAttribute('dmg');
+            swordDamage = fighitingSword.getAttribute('data-dmg');
             prevSharpnessUpgradeValue /= upgradeIncreaseValue;
             sharpnessUpgradeValue /= upgradeIncreaseValue;
             swordLvlDownSound.play();
@@ -188,8 +188,8 @@ const buttonGoBossesGame = document.querySelector('.main_goto-bosses-page');
 const swordHpField = document.querySelector('.bosses_sword-hp');
 const bossHpField = document.querySelector('.bosses_boss-hp')
 let currentBoss = bosses[countOfWonBosses];
-let bossHealthPoint = currentBoss.getAttribute('hp');
-let swordDamage = fighitingSword.getAttribute('dmg');
+let bossHealthPoint = currentBoss.getAttribute('data-hp');
+let swordDamage = fighitingSword.getAttribute('data-dmg');
 const goBackButton = document.querySelector('.bosses_button-back');
 let bossPunch;
 const bossesContainer = document.querySelector('.bosses-container');
@@ -272,7 +272,7 @@ function goBackToClickGame() {
         sharpnessCount += perSecondEffectivness;
         sharpnessUpdate();
     }, 1000);
-    bossHealthPoint = currentBoss.getAttribute('hp');
+    bossHealthPoint = currentBoss.getAttribute('data-hp');
     sharpnessUpdate();
 }
 
