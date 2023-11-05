@@ -198,7 +198,7 @@ const bossDefeatedSound = document.querySelector('.bosses_boss-beated-sound');
 
 buttonGoBossesGame.addEventListener('click', () => {
     clearInterval(updateSharpnessPerSecond);
-    const bossDamage = currentBoss.getAttribute('dmg');
+    const bossDamage = currentBoss.getAttribute('data-dmg');
     const clickerGameContainer = document.querySelector('.main_clicker');
     const bossesGameContainer = document.querySelector('.main_bosses');
 
